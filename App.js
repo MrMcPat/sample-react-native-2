@@ -7,6 +7,7 @@ import { createDrawerNavigator } from "@react-navigation/drawer";
 import Home from "./screens/Home";
 import About from "./screens/About";
 import ReviewDetails from "./screens/ReviewDetails";
+import Header from "./shared/Header";
 
 export default function App() {
   let [fontsLoaded] = useFonts({
@@ -24,9 +25,19 @@ export default function App() {
         <Stack.Screen
           name="Home"
           component={Home}
-          options={{
-            title: "GameZone",
-            headerStyle: { backgroundColor: "#eee" },
+          options={({ navigation }) => {
+            return {
+              headerTitle: () => <Header navigation={navigation} />,
+            };
+          }}
+        />
+        <Stack.Screen
+          name="About"
+          component={About}
+          options={({ navigation }) => {
+            return {
+              headerTitle: () => <Header navigation={navigation} />,
+            };
           }}
         />
         <Stack.Screen
@@ -34,7 +45,6 @@ export default function App() {
           component={ReviewDetails}
           options={{
             title: "Review Details",
-            headerStyle: { backgroundColor: "#eee" },
           }}
         />
       </Stack.Navigator>
