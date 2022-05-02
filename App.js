@@ -17,8 +17,22 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="ReviewDetails" component={ReviewDetails} />
+        <Stack.Screen
+          name="Home"
+          component={Home}
+          options={{
+            title: "GameZone",
+            headerStyle: { backgroundColor: "#eee" },
+          }}
+        />
+        <Stack.Screen
+          name="ReviewDetails"
+          component={ReviewDetails}
+          options={{
+            title: "Review Details",
+            headerStyle: { backgroundColor: "#eee" },
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
