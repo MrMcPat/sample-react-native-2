@@ -12,10 +12,16 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 export default function Home({ navigation }) {
   const [reviews, setReviews] = useState([
-    { title: "sample1", rating: 5, body: "sample1", key: "1" },
-    { title: "sample2", rating: 4, body: "sample2", key: "2" },
-    { title: "sample3", rating: 3, body: "sample3", key: "3" },
+    {
+      title: "Zelda, Breath of Fresh Air",
+      rating: 5,
+      body: "sample1",
+      key: "1",
+    },
+    { title: "Gotta Catch Them All", rating: 4, body: "sample2", key: "2" },
+    { title: 'Not So "Final" Fantasy', rating: 3, body: "sample3", key: "3" },
   ]);
+
   return (
     <View style={globalStyles.container}>
       <FlatList
@@ -28,15 +34,6 @@ export default function Home({ navigation }) {
           </TouchableOpacity>
         )}
       />
-      {/* <Button
-        title="Go to Details"
-        onPress={() =>
-          navigation.navigate("ReviewDetails", {
-            itemId: 86,
-            otherParam: "whatever",
-          })
-        }
-      /> */}
     </View>
   );
 }

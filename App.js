@@ -1,8 +1,11 @@
 import AppLoading from "expo-app-loading";
+import { View } from "react-native";
 import { useFonts, Nunito_400Regular } from "@expo-google-fonts/dev";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { createDrawerNavigator } from "@react-navigation/drawer";
 import Home from "./screens/Home";
+import About from "./screens/About";
 import ReviewDetails from "./screens/ReviewDetails";
 
 export default function App() {
@@ -13,6 +16,7 @@ export default function App() {
     return <AppLoading />;
   }
   const Stack = createNativeStackNavigator();
+  const Drawer = createDrawerNavigator();
 
   return (
     <NavigationContainer>
